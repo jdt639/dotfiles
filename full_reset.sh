@@ -11,3 +11,10 @@ install_homebrew() {
   fi
   eval $(/opt/homebrew/bin/brew shellenv)
 }
+
+link_zshrc() {
+  if ! which /Users/$USER/.zshrc > /dev/null 2>&1; then
+    info "linking .zshrc"
+    ln $ROOT_PATH/.zshrc /Users/$USER
+  fi
+}
